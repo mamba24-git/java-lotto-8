@@ -1,7 +1,7 @@
 /*
  * Lotto.java   0.1 2025/10/29
  */
-package lotto;
+package lotto.domain;
 
 import java.util.*;
 
