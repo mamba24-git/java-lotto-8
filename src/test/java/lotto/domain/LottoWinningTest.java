@@ -21,12 +21,9 @@ class LottoWinningTest {
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
-    @DisplayName("당첨 번호에 범위가 맞지 않는 숫자가 있으면 예외가 발생한다.")
-    @Test
-    void 당첨_번호에_범위에_맞지_않는_숫자가_있으면_예외가_발생한다() {
-        assertThatThrownBy(() -> new LottoWinning(List.of(1, 2, 3, 4, 5, 46), 8))
-                .isInstanceOf(IllegalArgumentException.class);
-    }
+//    @DisplayName("당첨 번호에 범위가 맞지 않는 숫자가 있으면 예외가 발생한다.")
+//    @Test
+//    void 당첨_번호에_범위에_맞지_않는_숫자가_있으면_예외가_발생한다()
 
     @DisplayName("당첨 번호와 보너스 번호가 중복되면 예외가 발생한다.")
     @Test

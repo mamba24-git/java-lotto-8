@@ -66,4 +66,12 @@ public class LottoWinning {
     public boolean containBonus(int number) {
         return bonusNumber == number;
     }
+
+    public List<Integer> getWinningNumbers() {
+        return numbers;
+    }
+
+    public int getBonusNumber() {
+        return bonusNumber;
+    }
 }
