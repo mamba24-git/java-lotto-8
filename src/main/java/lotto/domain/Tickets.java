@@ -1,16 +1,15 @@
 /*
- * Tickets.java	0.1 2025/11/2
+ * Tickets.java	0.2 2025/11/2
  */
 package lotto.domain;
 
 import java.util.*;
-import java.util.function.Consumer;
 
 /**
  * 발급된 각 로또를 list로 저장
  *
- * @version 0.1	2025/11/2
  * @author haram
+ * @version 0.3    2025/11/3
  */
 public class Tickets {
 	private final List<Lotto> list;
@@ -30,7 +29,7 @@ public class Tickets {
 		return list;
 	}
 
-	public void forEach(Consumer<Lotto> consumer) {
+	public void forEach(java.util.function.Consumer<Lotto> consumer) {
 		for (Lotto t : list) {
 			consumer.accept(t);
 		}

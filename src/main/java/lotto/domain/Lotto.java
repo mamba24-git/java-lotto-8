@@ -75,7 +75,7 @@ public class Lotto {
 	 */
 	public boolean bonusMatch(LottoWinning lottoWinning) {
 		for (Integer n : numbers) {
-			if(lottoWinning.containBonus(n)) {
+			if(n == lottoWinning.getBonusNumber()) {
 				return true;
 			}
 		}

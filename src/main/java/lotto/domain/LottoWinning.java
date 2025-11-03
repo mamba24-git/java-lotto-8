@@ -4,12 +4,13 @@
 package lotto.domain;
 
 import java.util.*;
+import lotto.util.Parser;
 
 /**
  * 당첨 번호와 보너스 번호를 담고 있는 당첨 로또 객체
  * (추후 Lotto.java 를 상속받고 메서드도 오버로딩하는 더 효율적안 형태로 리팩토링 필요)
  *
- * @version 0.1 2025/11/2
+ * @version 0.2 2025/11/3
  * @author haram
  */
 public class LottoWinning {
@@ -23,9 +24,14 @@ public class LottoWinning {
         this.bonusNumber = bonusNumber;
     }
 
+    public static LottoWinning from(String mainCsv, String bonusRaw) {
+        List<Integer> main = Parser.parseCsv(mainCsv);
+        int bonus = Parser.parseBonus(main, bonusRaw);
+        return new LottoWinning(main, bonus);
+    }
+
     /**
      * 입력된 당첨 번호 내의 각 숫자가 올바른 값인지 검증.
-     * 입력값이 공백이거나 숫자가 아닌 경우 등은 파싱 단계에서 진행하므로 여기서 중복으로 처리할 필요 없음.
      *
      * @param numbers 파싱된 로또번호 입력값울 담은 리스트
      */
@@ -61,14 +67,6 @@ public class LottoWinning {
 
     public boolean contains(int number) {
         return numbers.contains(number);
-    }
-
-    public boolean containBonus(int number) {
-        return bonusNumber == number;
-    }
-
-    public List<Integer> getWinningNumbers() {
-        return numbers;
     }
 
     public int getBonusNumber() {
